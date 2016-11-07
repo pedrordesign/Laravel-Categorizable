@@ -34,15 +34,14 @@ Check [lazychaser/laravel-nestedset](https://github.com/lazychaser/laravel-neste
 
 namespace App;
 
-use BrianFaust\Questionable\Contracts\Questionable;
-use BrianFaust\Questionable\Traits\Questionable as QuestionableTrait;
+use BrianFaust\Categorizable\HasCategoriesTrait;
+use BrianFaust\Categorizable\Interfaces\HasCategories;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model implements Questionable
+class Post extends Model implements HasCategories
 {
-    use CategorizableTrait;
+    use HasCategoriesTrait;
 }
-
 ```
 
 ## Examples

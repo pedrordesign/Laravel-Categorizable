@@ -1,10 +1,10 @@
 <?php
 
-namespace BrianFaust\Categorizable\Contracts;
+namespace BrianFaust\Categorizable\Interfaces;
 
 use Illuminate\Database\Eloquent\Model;
 
-interface Categorizable
+interface HasCategories
 {
     /**
      * @return mixed

@@ -2,10 +2,10 @@
 
 namespace BrianFaust\Categorizable\Traits;
 
-use BrianFaust\Categorizable\Models\Category;
+use BrianFaust\Categorizable\Category;
 use Illuminate\Database\Eloquent\Model;
 
-trait Categorizable
+trait HasCategoriesTrait
 {
     /**
      * @return mixed

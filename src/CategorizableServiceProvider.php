@@ -3,8 +3,9 @@
 namespace BrianFaust\Categorizable;
 
 use Cviebrock\EloquentSluggable\SluggableServiceProvider;
+use BrianFaust\ServiceProvider\ServiceProvider;
 
-class ServiceProvider extends \BrianFaust\ServiceProvider\ServiceProvider
+class CategorizableServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

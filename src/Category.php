@@ -1,19 +1,14 @@
 <?php
 
-namespace BrianFaust\Categorizable\Models;
+namespace BrianFaust\Categorizable;
 
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 use Kalnoy\Nestedset\Node;
 
-class Category extends Node implements SluggableInterface
+class Category extends Node
 {
-    use SluggableTrait;
-
-    /**
-     * @var array
-     */
-    protected $sluggable = ['build_from' => 'name'];
+    use HasSlug;
 
     /**
      * @var array
@@ -44,5 +39,15 @@ class Category extends Node implements SluggableInterface
     public static function tree()
     {
         return static::get()->toTree()->toArray();
+    }
+
+    /**
+     * Get the options for generating the slug.
+     */
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
     }
 }
