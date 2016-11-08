@@ -12,14 +12,14 @@ And then include the service provider within `app/config/app.php`.
 
 ``` php
 'providers' => [
-    BrianFaust\Categorizable\ServiceProvider::class
+    BrianFaust\Categorizable\CategorizableServiceProvider::class
 ];
 ```
 
 To get started, you'll need to publish the vendor assets and migrate:
 
 ```
-php artisan vendor:publish --provider="BrianFaust\Categorizable\ServiceProvider" && php artisan migrate
+php artisan vendor:publish --provider="BrianFaust\Categorizable\CategorizableServiceProvider" && php artisan migrate
 ```
 
 ## Usage
