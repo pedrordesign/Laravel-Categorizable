@@ -1,6 +1,6 @@
 <?php
 
-namespace BrianFaust\Categorizable\Traits;
+namespace BrianFaust\Categorizable;
 
 use BrianFaust\Categorizable\Category;
 use Illuminate\Database\Eloquent\Model;
