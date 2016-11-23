@@ -1,8 +1,16 @@
 <?php
 
+/*
+ * This file is part of Laravel Categorizable.
+ *
+ * (c) Brian Faust <hello@brianfaust.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace BrianFaust\Categorizable;
 
-use BrianFaust\Categorizable\Category;
 use Illuminate\Database\Eloquent\Model;
 
 trait HasCategoriesTrait
@@ -60,7 +68,7 @@ trait HasCategoriesTrait
      */
     public function addCategory(Model $category)
     {
-        if (!$this->categories->contains($category->getKey())) {
+        if (! $this->categories->contains($category->getKey())) {
             $this->categories()->attach($category);
         }
     }
