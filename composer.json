@@ -6,14 +6,13 @@
     "authors": [{
         "name": "Brian Faust",
         "email": "hello@brianfaust.de",
-        "homepage": "https://brianfaust.de",
-        "role": "Developer"
+        "homepage": "https://brianfaust.de"
     }],
     "require": {
-        "php": "^5.6.4 || ^7.0",
-        "illuminate/database": "5.2.* || 5.3.*",
+        "php": "^7.0",
+        "illuminate/database": "5.3.*",
         "faustbrian/laravel-service-provider": "^1.0",
-        "kalnoy/nestedset": "^3.1|^4.0",
+        "kalnoy/nestedset": "^4.1",
         "spatie/laravel-sluggable": "^1.2"
     },
     "require-dev": {
