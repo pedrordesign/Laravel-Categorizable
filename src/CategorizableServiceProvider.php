@@ -11,7 +11,6 @@
 
 namespace BrianFaust\Categorizable;
 
-use Cviebrock\EloquentSluggable\SluggableServiceProvider;
 use BrianFaust\ServiceProvider\ServiceProvider;
 
 class CategorizableServiceProvider extends ServiceProvider
@@ -22,28 +21,6 @@ class CategorizableServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishMigrations();
-    }
-
-    /**
-     * Register the application services.
-     */
-    public function register()
-    {
-        parent::register();
-
-        $this->app->register(SluggableServiceProvider::class);
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return array_merge(parent::provides(), [
-            SluggableServiceProvider::class,
-        ]);
     }
 
     /**
