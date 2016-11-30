@@ -13,7 +13,7 @@ namespace BrianFaust\Categorizable;
 
 use Illuminate\Database\Eloquent\Model;
 
-trait HasCategoriesTrait
+trait HasCategories
 {
     /**
      * @return mixed
@@ -68,7 +68,7 @@ trait HasCategoriesTrait
      */
     public function addCategory(Model $category)
     {
-        if (! $this->categories->contains($category->getKey())) {
+        if (!$this->categories->contains($category->getKey())) {
             $this->categories()->attach($category);
         }
     }
