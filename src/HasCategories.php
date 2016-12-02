@@ -68,7 +68,7 @@ trait HasCategories
      */
     public function addCategory(Model $category)
     {
-        if (! $this->categories->contains($category->getKey())) {
+        if (!$this->categories->contains($category->getKey())) {
             $this->categories()->attach($category);
         }
     }

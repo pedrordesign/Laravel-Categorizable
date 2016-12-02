@@ -11,9 +11,9 @@
 
 namespace BrianFaust\Categorizable;
 
+use Kalnoy\Nestedset\Node;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
-use Kalnoy\Nestedset\Node;
 
 class Category extends Node
 {
