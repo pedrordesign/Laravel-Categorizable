@@ -11,9 +11,7 @@ $ composer require faustbrian/laravel-categorizable
 And then include the service provider within `app/config/app.php`.
 
 ``` php
-'providers' => [
-    BrianFaust\Categorizable\CategorizableServiceProvider::class
-];
+BrianFaust\Categorizable\CategorizableServiceProvider::class
 ```
 
 To get started, you'll need to publish the vendor assets and migrate:
