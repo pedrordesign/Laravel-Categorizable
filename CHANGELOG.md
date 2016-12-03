@@ -2,19 +2,20 @@
 
 All Notable changes to `faustbrian/laravel-categorizable` will be documented in this file.
 
-## NEXT - YYYY-MM-DD
+## 2.0.4 (30/11/2016)
+- Clean up
 
-### Added
-- Nothing
+## 2.0.3 (30/11/2016)
+- Remove unused dependency
 
-### Deprecated
-- Nothing
+## 2.0.2 (30/11/2016)
+- Remove unused interface
 
-### Fixed
-- Nothing
+## 2.0.1 (09/11/2016)
+- Fix namespace
 
-### Removed
-- Nothing
+## 2.0.0 (07/11/2016)
+- Restructure the package
 
-### Security
-- Nothing
+## 1.0.0 (04/11/2016)
+- First release
