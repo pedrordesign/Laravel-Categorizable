@@ -22,11 +22,11 @@ declare(strict_types=1);
 
 namespace BrianFaust\Categorizable;
 
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Kalnoy\Nestedset\Node;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Category extends Node
 {
