@@ -25,6 +25,8 @@ namespace BrianFaust\Categorizable;
 use Kalnoy\Nestedset\Node;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Category extends Node
 {
@@ -36,9 +38,9 @@ class Category extends Node
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
-    public function categorizable()
+    public function categorizable(): MorphTo
     {
         return $this->morphTo();
     }
@@ -46,9 +48,9 @@ class Category extends Node
     /**
      * @param $class
      *
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function entries($class)
+    public function entries(string $class): MorphToMany
     {
         return $this->morphedByMany($class, 'categorizable', 'categories_relations');
     }
@@ -56,7 +58,7 @@ class Category extends Node
     /**
      * @return mixed
      */
-    public static function tree()
+    public static function tree(): array
     {
         return static::get()->toTree()->toArray();
     }

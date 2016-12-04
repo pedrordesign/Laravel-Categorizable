@@ -23,13 +23,16 @@ declare(strict_types=1);
 namespace BrianFaust\Categorizable;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
+
 
 trait HasCategories
 {
     /**
      * @return mixed
      */
-    public function categories()
+    public function categories(): MorphToMany
     {
         return $this->morphToMany(Category::class, 'categorizable', 'categories_relations');
     }
@@ -37,7 +40,7 @@ trait HasCategories
     /**
      * @return mixed
      */
-    public function categoriesList()
+    public function categoriesList(): aray
     {
         return $this->categories()
                     ->lists('name', 'id')
@@ -47,7 +50,7 @@ trait HasCategories
     /**
      * @param $categories
      */
-    public function categorize($categories)
+    public function categorize($categories): void
     {
         foreach ($categories as $category) {
             $this->addCategory($category);
@@ -57,7 +60,7 @@ trait HasCategories
     /**
      * @param $categories
      */
-    public function uncategorize($categories)
+    public function uncategorize($categories): void
     {
         foreach ($categories as $category) {
             $this->removeCategory($category);
@@ -67,7 +70,7 @@ trait HasCategories
     /**
      * @param $categories
      */
-    public function recategorize($categories)
+    public function recategorize($categories): void
     {
         $this->categories()->sync([]);
 
@@ -77,7 +80,7 @@ trait HasCategories
     /**
      * @param Model $category
      */
-    public function addCategory(Model $category)
+    public function addCategory(Model $category): void
     {
         if (!$this->categories->contains($category->getKey())) {
             $this->categories()->attach($category);
@@ -87,7 +90,7 @@ trait HasCategories
     /**
      * @param Model $category
      */
-    public function removeCategory(Model $category)
+    public function removeCategory(Model $category): void
     {
         $this->categories()->detach($category);
     }
