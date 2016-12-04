@@ -22,9 +22,9 @@ declare(strict_types=1);
 
 namespace BrianFaust\Categorizable;
 
-use BrianFaust\ServiceProvider\ServiceProvider;
+use BrianFaust\ServiceProvider\AbstractServiceProvider;
 
-class CategorizableServiceProvider extends ServiceProvider
+class CategorizableServiceProvider extends AbstractServiceProvider
 {
     /**
      * Bootstrap the application services.
