@@ -25,7 +25,7 @@ namespace BrianFaust\Categorizable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
-trait HasCategories
+trait Categorizable
 {
     /**
      * @return mixed
