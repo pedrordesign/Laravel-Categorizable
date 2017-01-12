@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 
+use Kalnoy\Nestedset\NestedSet;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
